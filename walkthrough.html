@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.75">
+<meta name="generator" content="quarto-1.0.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,15 +12,10 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: 1;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
-  vertical-align: middle;
-}
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -59,7 +54,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
+code span.bu { } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -72,7 +67,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.im { } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -94,6 +89,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./init.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -133,7 +129,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <meta name="twitter:card" content="summary">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -153,13 +149,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  </a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
-  <div class="quarto-reader-toggle-btn">
-  <i class="bi"></i>
-  </div>
-</a>
-              </div>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -176,7 +165,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -189,7 +178,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Getting Started</a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">Getting Started</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./init.html" class="sidebar-item-text sidebar-link">Launch Experiments with wandb.init</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -204,27 +198,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#create-a-new-registered-model" id="toc-create-a-new-registered-model" class="nav-link active" data-scroll-target="#create-a-new-registered-model">1. Create a new Registered Model</a></li>
-  <li><a href="#train-log-model-versions" id="toc-train-log-model-versions" class="nav-link" data-scroll-target="#train-log-model-versions">2. Train &amp; log Model Versions</a>
-  <ul>
-  <li><a href="#init" id="toc-init" class="nav-link" data-scroll-target="#init">init</a></li>
-  <li><a href="#add-metadata-about-the-run-to-the-config" id="toc-add-metadata-about-the-run-to-the-config" class="nav-link" data-scroll-target="#add-metadata-about-the-run-to-the-config">Add metadata about the run to the config</a></li>
-  </ul></li>
+  <li><a href="#train-log-model-versions" id="toc-train-log-model-versions" class="nav-link" data-scroll-target="#train-log-model-versions">2. Train &amp; log Model Versions</a></li>
   <li><a href="#link-model-versions-to-the-registered-model" id="toc-link-model-versions-to-the-registered-model" class="nav-link" data-scroll-target="#link-model-versions-to-the-registered-model">3. Link Model Versions to the Registered Model</a></li>
   <li><a href="#use-a-model-version" id="toc-use-a-model-version" class="nav-link" data-scroll-target="#use-a-model-version">4. Use a Model Version</a></li>
   <li><a href="#evaluate-model-performance" id="toc-evaluate-model-performance" class="nav-link" data-scroll-target="#evaluate-model-performance">5. Evaluate Model Performance</a></li>
   <li><a href="#promote-a-version-to-production" id="toc-promote-a-version-to-production" class="nav-link" data-scroll-target="#promote-a-version-to-production">6. Promote a Version to Production</a></li>
   <li><a href="#consume-the-production-model" id="toc-consume-the-production-model" class="nav-link" data-scroll-target="#consume-the-production-model">7. Consume the Production Model</a></li>
-  <li><a href="#build-a-reporting-dashboard" id="toc-build-a-reporting-dashboard" class="nav-link" data-scroll-target="#build-a-reporting-dashboard">8. Build a Reporting Dashboard</a>
-  <ul>
-  <li><a href="#foo" id="toc-foo" class="nav-link" data-scroll-target="#foo">foo</a></li>
-  </ul></li>
+  <li><a href="#build-a-reporting-dashboard" id="toc-build-a-reporting-dashboard" class="nav-link" data-scroll-target="#build-a-reporting-dashboard">8. Build a Reporting Dashboard</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/fastai/wandb-nbdev/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -288,7 +275,10 @@ Note
 <section id="create-a-new-registered-model" class="level2">
 <h2 class="anchored" data-anchor-id="create-a-new-registered-model">1. Create a new Registered Model</h2>
 <p>First, create a Registered Model to hold all the candidate models for your particular modeling task. In this tutorial, we will use the classic <a href="https://pytorch.org/vision/stable/generated/torchvision.datasets.MNIST.html#torchvision.datasets.MNIST">MNIST Dataset</a> - 28x28 grayscale input images with output classes from 0-9. The video below demonstrates how to create a new Registered Model.</p>
-<p>Using Model Registry</p>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Using Model Registry</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Using Artifact Browser</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <ol type="1">
 <li>Visit your Model Registry at <a href="https://wandb.ai/registry/model">wandb.ai/registry/model</a> (linked from homepage).</li>
 </ol>
@@ -302,13 +292,17 @@ Note
 <li>Make sure the <code>Owning Entity</code> and <code>Owning Project</code> are set correctly to the values you desire. Enter a unique name for your new Registered Model that describes the modeling task or use-case of interest.</li>
 </ol>
 <p><img src="https://1039519455-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Lqya5RvLedGEWPhtkjU-1972196547%2Fuploads%2FE8H3r7lvIOAWohdP56mb%2FScreen%20Shot%202022-06-21%20at%2010.20.23%20AM.png?alt=media&amp;token=f4aa72dc-fa7d-4bba-90a6-c8cfbc5e41c5" class="img-fluid"></p>
-<p>Using Artifact Browser</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <ol type="1">
 <li>Visit your Project’s Artifact Browser: <code>wandb.ai/&lt;entity&gt;/&lt;project&gt;/artifacts</code></li>
 <li>Click the <code>+</code> icon on the bottom of the Artifact Browser Sidebar</li>
 <li>Select <code>Type: model</code>, <code>Style: Collection</code>, and enter a name. In our case <code>MNIST Grayscale 28x28</code>. Remember, a Collection should map to a modeling task - enter a unique name that describes the use case.</li>
 </ol>
 <p><img src="https://1039519455-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Lqya5RvLedGEWPhtkjU-1972196547%2Fuploads%2F1HUyeXPDq1esREYGdN7T%2F2022-05-17%2014.20.36.gif?alt=media&amp;token=689ca931-b834-447b-875f-3e8631e3ff35" class="img-fluid"></p>
+</div>
+</div>
+</div>
 </section>
 <section id="train-log-model-versions" class="level2">
 <h2 class="anchored" data-anchor-id="train-log-model-versions">2. Train &amp; log Model Versions</h2>
@@ -330,256 +324,37 @@ Note
 </ul></li>
 </ol>
 <p>By default, you should use the native W&amp;B Artifacts API to log your serialized model. However, since this pattern is so common, we have provided a single method which combines serialization, Artifact creation, and logging. See the “(Beta) Using <code>log_model</code>” tab for details.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wandb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Using Artifacts</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">(Beta) Using <code>log_model</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Declare Dataset Dependency</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wandb</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Always initialize a W&amp;B run to start tracking</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>wandb.init()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># (Optional) Declare an upstream dataset dependency</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># see the `Declare Dataset Dependency` tab for</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># alternative examples.</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> wandb.use_artifact(<span class="st">"mnist:latest"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># At the end of every epoch (or at the end of your script)...</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># ... Serialize your model</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>model.save(<span class="st">"path/to/model.pt"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># ... Create a Model Version</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>art <span class="op">=</span> wandb.Artifact(<span class="ss">f'mnist-nn-</span><span class="sc">{</span>wandb<span class="sc">.</span>run<span class="sc">.</span><span class="bu">id</span><span class="sc">}</span><span class="ss">'</span>, <span class="bu">type</span><span class="op">=</span><span class="st">"model"</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># ... Add the serialized files</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>art.add_file(<span class="st">"path/to/model.pt"</span>, <span class="st">"model.pt"</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># (optional) Log training metrics</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>wandb.log({<span class="st">"train_loss"</span>: <span class="fl">0.345</span>, <span class="st">"val_loss"</span>: <span class="fl">0.456</span>})</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># ... Log the Version</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> model_is_best:</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If the model is the best model so far, add "best" to the aliases</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    wandb.log_artifact(art, aliases<span class="op">=</span>[<span class="st">"latest"</span>, <span class="st">"best"</span>])</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    wandb.log_artifact(art)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nbdev <span class="im">import</span> show_doc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<hr>
-<section id="init" class="level4">
-<h4 class="anchored" data-anchor-id="init">init</h4>
-<blockquote class="blockquote">
-<pre><code> init (job_type:Optional[str]=None, dir=None,
-       config:Union[Dict,str,NoneType]=None, project:Optional[str]=None,
-       entity:Optional[str]=None, reinit:bool=None,
-       tags:Optional[Sequence]=None, group:Optional[str]=None,
-       name:Optional[str]=None, notes:Optional[str]=None,
-       magic:Union[dict,str,bool]=None, config_exclude_keys=None,
-       config_include_keys=None, anonymous:Optional[str]=None,
-       mode:Optional[str]=None, allow_val_change:Optional[bool]=None,
-       resume:Union[bool,str,NoneType]=None, force:Optional[bool]=None,
-       tensorboard=None, sync_tensorboard=None, monitor_gym=None,
-       save_code=None, id=None, settings:Union[wandb.sdk.wandb_settings.Se
-       ttings,Dict[str,Any],NoneType]=None)</code></pre>
-</blockquote>
-<p>Starts a new run to track and log to W&amp;B.</p>
-<p>In an ML training pipeline, you could add <code>wandb.init()</code> to the beginning of your training script as well as your evaluation script, and each piece would be tracked as a run in W&amp;B.</p>
-<p><code>wandb.init()</code> spawns a new background process to log data to a run, and it also syncs data to wandb.ai by default so you can see live visualizations.</p>
-<p>Call <code>wandb.init()</code> to start a run before logging data with <code>wandb.log()</code>: <!--yeadoc-test:init-method-log--></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wandb</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>wandb.init()</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ... calculate metrics, generate media</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>wandb.log({<span class="st">"accuracy"</span>: <span class="fl">0.9</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><code>wandb.init()</code> returns a run object, and you can also access the run object via <code>wandb.run</code>: <!--yeadoc-test:init-and-assert-global--></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wandb</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>run <span class="op">=</span> wandb.init()</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> run <span class="kw">is</span> wandb.run</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>At the end of your script, we will automatically call <code>wandb.finish</code> to finalize and cleanup the run. However, if you call <code>wandb.init</code> from a child process, you must explicitly call <code>wandb.finish</code> at the end of the child process.</p>
-<p>For more on using <code>wandb.init()</code>, including detailed examples, check out our <a href="https://docs.wandb.ai/guides/track/launch">guide and FAQs</a>.</p>
-<p>Arguments: project: (str, optional) The name of the project where you’re sending the new run. If the project is not specified, the run is put in an “Uncategorized” project. entity: (str, optional) An entity is a username or team name where you’re sending runs. This entity must exist before you can send runs there, so make sure to create your account or team in the UI before starting to log runs. If you don’t specify an entity, the run will be sent to your default entity, which is usually your username. Change your default entity in <a href="https://wandb.ai/settings">your settings</a> under “default location to create new projects”. config: (dict, argparse, absl.flags, str, optional) This sets <code>wandb.config</code>, a dictionary-like object for saving inputs to your job, like hyperparameters for a model or settings for a data preprocessing job. The config will show up in a table in the UI that you can use to group, filter, and sort runs. Keys should not contain <code>.</code> in their names, and values should be under 10 MB. If dict, argparse or absl.flags: will load the key value pairs into the <code>wandb.config</code> object. If str: will look for a yaml file by that name, and load config from that file into the <code>wandb.config</code> object. save_code: (bool, optional) Turn this on to save the main script or notebook to W&amp;B. This is valuable for improving experiment reproducibility and to diff code across experiments in the UI. By default this is off, but you can flip the default behavior to on in <a href="https://wandb.ai/settings">your settings page</a>. group: (str, optional) Specify a group to organize individual runs into a larger experiment. For example, you might be doing cross validation, or you might have multiple jobs that train and evaluate a model against different test sets. Group gives you a way to organize runs together into a larger whole, and you can toggle this on and off in the UI. For more details, see our <a href="https://docs.wandb.com/library/grouping">guide to grouping runs</a>. job_type: (str, optional) Specify the type of run, which is useful when you’re grouping runs together into larger experiments using group. For example, you might have multiple jobs in a group, with job types like train and eval. Setting this makes it easy to filter and group similar runs together in the UI so you can compare apples to apples. tags: (list, optional) A list of strings, which will populate the list of tags on this run in the UI. Tags are useful for organizing runs together, or applying temporary labels like “baseline” or “production”. It’s easy to add and remove tags in the UI, or filter down to just runs with a specific tag. name: (str, optional) A short display name for this run, which is how you’ll identify this run in the UI. By default, we generate a random two-word name that lets you easily cross-reference runs from the table to charts. Keeping these run names short makes the chart legends and tables easier to read. If you’re looking for a place to save your hyperparameters, we recommend saving those in config. notes: (str, optional) A longer description of the run, like a <code>-m</code> commit message in git. This helps you remember what you were doing when you ran this run. dir: (str, optional) An absolute path to a directory where metadata will be stored. When you call <code>download()</code> on an artifact, this is the directory where downloaded files will be saved. By default, this is the <code>./wandb</code> directory. resume: (bool, str, optional) Sets the resuming behavior. Options: <code>"allow"</code>, <code>"must"</code>, <code>"never"</code>, <code>"auto"</code> or <code>None</code>. Defaults to <code>None</code>. Cases: - <code>None</code> (default): If the new run has the same ID as a previous run, this run overwrites that data. - <code>"auto"</code> (or <code>True</code>): if the previous run on this machine crashed, automatically resume it. Otherwise, start a new run. - <code>"allow"</code>: if id is set with <code>init(id="UNIQUE_ID")</code> or <code>WANDB_RUN_ID="UNIQUE_ID"</code> and it is identical to a previous run, wandb will automatically resume the run with that id. Otherwise, wandb will start a new run. - <code>"never"</code>: if id is set with <code>init(id="UNIQUE_ID")</code> or <code>WANDB_RUN_ID="UNIQUE_ID"</code> and it is identical to a previous run, wandb will crash. - <code>"must"</code>: if id is set with <code>init(id="UNIQUE_ID")</code> or <code>WANDB_RUN_ID="UNIQUE_ID"</code> and it is identical to a previous run, wandb will automatically resume the run with the id. Otherwise wandb will crash. See <a href="https://docs.wandb.com/library/advanced/resuming">our guide to resuming runs</a> for more. reinit: (bool, optional) Allow multiple <code>wandb.init()</code> calls in the same process. (default: <code>False</code>) magic: (bool, dict, or str, optional) The bool controls whether we try to auto-instrument your script, capturing basic details of your run without you having to add more wandb code. (default: <code>False</code>) You can also pass a dict, json string, or yaml filename. config_exclude_keys: (list, optional) string keys to exclude from <code>wandb.config</code>. config_include_keys: (list, optional) string keys to include in <code>wandb.config</code>. anonymous: (str, optional) Controls anonymous data logging. Options: - <code>"never"</code> (default): requires you to link your W&amp;B account before tracking the run so you don’t accidentally create an anonymous run. - <code>"allow"</code>: lets a logged-in user track runs with their account, but lets someone who is running the script without a W&amp;B account see the charts in the UI. - <code>"must"</code>: sends the run to an anonymous account instead of to a signed-up user account. mode: (str, optional) Can be <code>"online"</code>, <code>"offline"</code> or <code>"disabled"</code>. Defaults to online. allow_val_change: (bool, optional) Whether to allow config values to change after setting the keys once. By default, we throw an exception if a config value is overwritten. If you want to track something like a varying learning rate at multiple times during training, use <code>wandb.log()</code> instead. (default: <code>False</code> in scripts, <code>True</code> in Jupyter) force: (bool, optional) If <code>True</code>, this crashes the script if a user isn’t logged in to W&amp;B. If <code>False</code>, this will let the script run in offline mode if a user isn’t logged in to W&amp;B. (default: <code>False</code>) sync_tensorboard: (bool, optional) Synchronize wandb logs from tensorboard or tensorboardX and save the relevant events file. (default: <code>False</code>) monitor_gym: (bool, optional) Automatically log videos of environment when using OpenAI Gym. (default: <code>False</code>) See <a href="https://docs.wandb.com/library/integrations/openai-gym">our guide to this integration</a>. id: (str, optional) A unique ID for this run, used for resuming. It must be unique in the project, and if you delete a run you can’t reuse the ID. Use the name field for a short descriptive name, or config for saving hyperparameters to compare across runs. The ID cannot contain special characters. See <a href="https://docs.wandb.com/library/resuming">our guide to resuming runs</a>.</p>
-<p>Examples: ### Set where the run is logged</p>
-<p>You can change where the run is logged, just like changing the organization, repository, and branch in git:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wandb</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>user <span class="op">=</span> <span class="st">"geoff"</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>project <span class="op">=</span> <span class="st">"capsules"</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>display_name <span class="op">=</span> <span class="st">"experiment-2021-10-31"</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>wandb.init(entity<span class="op">=</span>user, project<span class="op">=</span>project, name<span class="op">=</span>display_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="add-metadata-about-the-run-to-the-config" class="level3">
-<h3 class="anchored" data-anchor-id="add-metadata-about-the-run-to-the-config">Add metadata about the run to the config</h3>
-<p>Pass a dictionary-style object as the <code>config</code> keyword argument to add metadata, like hyperparameters, to your run. <!--yeadoc-test:init-set-config--></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wandb</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>config <span class="op">=</span> {<span class="st">"lr"</span>: <span class="fl">3e-4</span>, <span class="st">"batch_size"</span>: <span class="dv">32</span>}</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>config.update({<span class="st">"architecture"</span>: <span class="st">"resnet"</span>, <span class="st">"depth"</span>: <span class="dv">34</span>})</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>wandb.init(config<span class="op">=</span>config)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Raises: Exception: if problem.</p>
-<p>Returns: A <code>Run</code> object.</p>
-<table class="table">
-<thead>
-<tr class="header">
-<th></th>
-<th><strong>Type</strong></th>
-<th><strong>Default</strong></th>
-<th><strong>Details</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>job_type</td>
-<td>Optional</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>dir</td>
-<td>NoneType</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>config</td>
-<td>Union</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>project</td>
-<td>Optional</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>entity</td>
-<td>Optional</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>reinit</td>
-<td>bool</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>tags</td>
-<td>Optional</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>group</td>
-<td>Optional</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>name</td>
-<td>Optional</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>notes</td>
-<td>Optional</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>magic</td>
-<td>Union</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>config_exclude_keys</td>
-<td>NoneType</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>config_include_keys</td>
-<td>NoneType</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>anonymous</td>
-<td>Optional</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>mode</td>
-<td>Optional</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>allow_val_change</td>
-<td>Optional</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>resume</td>
-<td>Union</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>force</td>
-<td>Optional</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>tensorboard</td>
-<td>NoneType</td>
-<td>None</td>
-<td>alias for sync_tensorboard</td>
-</tr>
-<tr class="even">
-<td>sync_tensorboard</td>
-<td>NoneType</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>monitor_gym</td>
-<td>NoneType</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>save_code</td>
-<td>NoneType</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>id</td>
-<td>NoneType</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>settings</td>
-<td>Union</td>
-<td>None</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><strong>Returns</strong></td>
-<td><strong>Union</strong></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>Using Artifacts</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wandb</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Always initialize a W&amp;B run to start tracking</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>wandb.init()</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># (Optional) Declare an upstream dataset dependency</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># see the `Declare Dataset Dependency` tab for</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># alternative examples.</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> wandb.use_artifact(<span class="st">"mnist:latest"</span>)</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># At the end of every epoch (or at the end of your script)...</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># ... Serialize your model</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>model.save(<span class="st">"path/to/model.pt"</span>)</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co"># ... Create a Model Version</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>art <span class="op">=</span> wandb.Artifact(<span class="ss">f'mnist-nn-</span><span class="sc">{</span>wandb<span class="sc">.</span>run<span class="sc">.</span><span class="bu">id</span><span class="sc">}</span><span class="ss">'</span>, <span class="bu">type</span><span class="op">=</span><span class="st">"model"</span>)</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co"># ... Add the serialized files</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>art.add_file(<span class="st">"path/to/model.pt"</span>, <span class="st">"model.pt"</span>)</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co"># (optional) Log training metrics</span></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>wandb.log({<span class="st">"train_loss"</span>: <span class="fl">0.345</span>, <span class="st">"val_loss"</span>: <span class="fl">0.456</span>})</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co"># ... Log the Version</span></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> model_is_best:</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If the model is the best model so far, add "best" to the aliases</span></span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    wandb.log_artifact(art, aliases<span class="op">=</span>[<span class="st">"latest"</span>, <span class="st">"best"</span>])</span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    wandb.log_artifact(art)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>(Beta) Using <code>log_model</code></p>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div class="callout-warning callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -593,43 +368,49 @@ Warning
 <p>The following code snippet leverages actively developed <code>beta</code> APIs and therefore is subject to change and not guaranteed to be backwards compatible.</p>
 </div>
 </div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> wandb.beta.workflows <span class="im">import</span> log_model</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># (Optional) Declare an upstream dataset dependency</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># see the `Declare Dataset Dependency` tab for</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># alternative examples.</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> wandb.use_artifact(<span class="st">"mnist:latest"</span>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># (optional) Log training metrics</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>wandb.log({<span class="st">"train_loss"</span>: <span class="fl">0.345</span>, <span class="st">"val_loss"</span>: <span class="fl">0.456</span>})</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># This one method will serialize the model, start a run, create a version</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># add the files to the version, and log the version. You can override</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># the default name, project, aliases, metadata, and more!</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>log_model(model, <span class="st">"mnist-nn"</span>, aliases<span class="op">=</span>[<span class="st">"best"</span>] <span class="cf">if</span> model_is_best <span class="cf">else</span> [])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> wandb.beta.workflows <span class="im">import</span> log_model</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># (Optional) Declare an upstream dataset dependency</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># see the `Declare Dataset Dependency` tab for</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># alternative examples.</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> wandb.use_artifact(<span class="st">"mnist:latest"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># (optional) Log training metrics</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>wandb.log({<span class="st">"train_loss"</span>: <span class="fl">0.345</span>, <span class="st">"val_loss"</span>: <span class="fl">0.456</span>})</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># This one method will serialize the model, start a run, create a version</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># add the files to the version, and log the version. You can override</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># the default name, project, aliases, metadata, and more!</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>log_model(model, <span class="st">"mnist-nn"</span>, aliases<span class="op">=</span>[<span class="st">"best"</span>] <span class="cf">if</span> model_is_best <span class="cf">else</span> [])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Note: you may want to define custom serialization and deserialization strategies. You can do so by subclassing the <a href="https://github.com/wandb/wandb/blob/9dfa60b14599f2716ab94dd85aa0c1113cb5d073/wandb/sdk/data_types/saved_model.py#L73"><code>_SavedModel</code> class</a>, similar to the <a href="https://github.com/wandb/wandb/blob/9dfa60b14599f2716ab94dd85aa0c1113cb5d073/wandb/sdk/data_types/saved_model.py#L358"><code>_PytorchSavedModel</code> class</a>. All subclasses will automatically be loaded into the serialization registry. <em>As this is a beta feature, please reach out to support@wandb.com with questions or comments.</em></p>
-<p>Declare Dataset Dependency</p>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <p>If you would like to track your training data, you can declare a dependency by calling <code>wandb.use_artifact</code> on your dataset. Here are 3 examples of how you can declare a dataset dependency:</p>
 <p><strong>Dataset stored in W&amp;B</strong></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> wandb.use_artifact(<span class="st">"[[entity/]project/]name:alias"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> wandb.use_artifact(<span class="st">"[[entity/]project/]name:alias"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Dataset stored on Local Filesystem</strong></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>art <span class="op">=</span> wandb.Artifact(<span class="st">"dataset_name"</span>, <span class="st">"dataset"</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>art.add_dir(<span class="st">"path/to/data"</span>) <span class="co"># or art.add_file("path/to/data.csv")</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> wandb.use_artifact(art)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>art <span class="op">=</span> wandb.Artifact(<span class="st">"dataset_name"</span>, <span class="st">"dataset"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>art.add_dir(<span class="st">"path/to/data"</span>) <span class="co"># or art.add_file("path/to/data.csv")</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> wandb.use_artifact(art)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Dataset stored on Remote Bucket</strong></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>art <span class="op">=</span> wandb.Artifact(<span class="st">"dataset_name"</span>, <span class="st">"dataset"</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>art.add_reference(<span class="st">"s3://path/to/data"</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> wandb.use_artifact(art)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>art <span class="op">=</span> wandb.Artifact(<span class="st">"dataset_name"</span>, <span class="st">"dataset"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>art.add_reference(<span class="st">"s3://path/to/data"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> wandb.use_artifact(art)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 <p>After logging 1 or more Model Versions, you will notice that your will have a new Model Artifact in your Artifact Browser. Here, we can see the results of logging 5 versions to an artifact named <code>mnist_nn-1r9jjogr</code>.</p>
 <p><img src="https://1039519455-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Lqya5RvLedGEWPhtkjU-1972196547%2Fuploads%2FW95CUXm3wFWmShgriUus%2FScreen%20Shot%202022-06-21%20at%2010.25.13%20AM.png?alt=media&amp;token=896e1dad-9a32-46c4-81d4-df61e641b740" class="img-fluid"></p>
 <p>If you are following along the example notebook, you should see a Run Workspace with charts similar to the image below</p>
 <p><img src="https://1039519455-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Lqya5RvLedGEWPhtkjU-1972196547%2Fuploads%2FHy8efgajVKuaTgOHy7db%2FScreen%20Shot%202022-05-12%20at%2011.42.12%20AM.png?alt=media&amp;token=4508d5ee-c900-46b3-a332-acb6e0ad7994" class="img-fluid"></p>
 </section>
-</section>
 <section id="link-model-versions-to-the-registered-model" class="level2">
 <h2 class="anchored" data-anchor-id="link-model-versions-to-the-registered-model">3. Link Model Versions to the Registered Model</h2>
 <p>Now, let’s say that we are ready to link one of our Model Versions to the Registered Model. We can accomplish this manually as well as via an API.</p>
-<p>Manual Linking</p>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Manual Linking</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Programatic Linking</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">(Beta) Using <code>link_model</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <p>The following video below demonstrates how to manually link a Model Version to your newly created Registered Model:</p>
 <ol type="1">
 <li>Navigate to the Model Version of interest</li>
@@ -638,71 +419,80 @@ Warning
 <li>(optional): Add additional aliases</li>
 </ol>
 <p><img src="https://1039519455-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Lqya5RvLedGEWPhtkjU-1972196547%2Fuploads%2FpKissGM67eXf771EoUQq%2F2022-05-11%2015.13.48.gif?alt=media&amp;token=923c6514-6c22-4c0d-a8d4-2ed7edcf51e7" class="img-fluid"></p>
-<p>Programatic Linking</p>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <p>While manual linking is useful for one-off Models, it is often useful to programmatically link Model Versions to a Collection - consider a nightly job or CI pipeline that wants to link the best Model Version from every training job. Depending on your context and use case, you may use one of 3 different linking APIs:</p>
 <p><strong>Fetch Model Artifact from Public API:</strong></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wandb</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Fetch the Model Version via API</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>art <span class="op">=</span> wandb.Api().artifact(...)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Link the Model Version to the Model Collection</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>art.link(<span class="st">"[[entity/]project/]collectionName"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wandb</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Fetch the Model Version via API</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>art <span class="op">=</span> wandb.Api().artifact(...)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Link the Model Version to the Model Collection</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>art.link(<span class="st">"[[entity/]project/]collectionName"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Model Artifact is “used” by the current Run:</strong></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wandb</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a W&amp;B run to start tracking</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>wandb.init()</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtain a reference to a Model Version</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>art <span class="op">=</span> wandb.use_artifact(...)</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Link the Model Version to the Model Collection</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>art.link(<span class="st">"[[entity/]project/]collectionName"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wandb</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a W&amp;B run to start tracking</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>wandb.init()</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtain a reference to a Model Version</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>art <span class="op">=</span> wandb.use_artifact(...)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Link the Model Version to the Model Collection</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>art.link(<span class="st">"[[entity/]project/]collectionName"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Model Artifact is logged by the current Run:</strong></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wandb</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a W&amp;B run to start tracking</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>wandb.init()</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an Model Version</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>art <span class="op">=</span> wandb.Artifact(...)</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Log the Model Version</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>wandb.log_artifact(art)</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Link the Model Version to the Collection</span></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>wandb.run.link_artifact(art, <span class="st">"[[entity/]project/]collectionName"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>(Beta) Using <code>link_model</code></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wandb</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize a W&amp;B run to start tracking</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>wandb.init()</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an Model Version</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>art <span class="op">=</span> wandb.Artifact(...)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Log the Model Version</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>wandb.log_artifact(art)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Link the Model Version to the Collection</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>wandb.run.link_artifact(art, <span class="st">"[[entity/]project/]collectionName"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
 <p>The following code snippet leverages actively developed <code>beta</code> APIs and therefore is subject to change and not guaranteed to be backwards compatible.</p>
 <p>In the case that you logged a model with the beta <code>log_model</code> discussed above, then you can use it’s companion method: <code>link_model</code></p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> wandb.beta.workflows <span class="im">import</span> log_model, link_model</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtain a Model Version</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>model_version <span class="op">=</span> wb.log_model(model, <span class="st">"mnist_nn"</span>)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Link the Model Version</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>link_model(model_version, <span class="st">"[[entity/]project/]collectionName"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> wandb.beta.workflows <span class="im">import</span> log_model, link_model</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtain a Model Version</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>model_version <span class="op">=</span> wb.log_model(model, <span class="st">"mnist_nn"</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Link the Model Version</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>link_model(model_version, <span class="st">"[[entity/]project/]collectionName"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>After you link the Model Version, you will see hyperlinks connecting the Version in the Registered Model to the source Artifact and visa versa.</p>
 <p><img src="https://1039519455-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Lqya5RvLedGEWPhtkjU-1972196547%2Fuploads%2Fo19AA9cXsA0ZMslGkb89%2F13_edit.png?alt=media&amp;token=4feb1cd8-5ba2-444f-9a0f-0c93a7228cd8" class="img-fluid"></p>
+</div>
+</div>
+</div>
 </section>
 <section id="use-a-model-version" class="level2">
 <h2 class="anchored" data-anchor-id="use-a-model-version">4. Use a Model Version</h2>
 <p>Now we are ready to consume a Model - perhaps to evaluate its performance, make predictions against a dataset, or use in a live production context. Similar to logging a Model, you may choose to use the raw Artifact API or the more opinionated beta APIs.</p>
-<p>Using Artifacts</p>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Using Artifacts</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">(Beta) Using <code>use_model</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <p>You can load in a Model Version using the <code>use_artifact</code> method.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wandb</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Always initialize a W&amp;B run to start tracking</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>wandb.init()</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Download your Model Version files</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> wandb.use_artifact(<span class="st">"[[entity/]project/]collectionName:latest"</span>).download()</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Deserialize your model (this will be your custom code to load in</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="co"># a model from disk - reversing the serialization process used in step 2)</span></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> make_model_from_data(path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>(Beta) Using <code>use_model</code></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wandb</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Always initialize a W&amp;B run to start tracking</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>wandb.init()</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Download your Model Version files</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> wandb.use_artifact(<span class="st">"[[entity/]project/]collectionName:latest"</span>).download()</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Deserialize your model (this will be your custom code to load in</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># a model from disk - reversing the serialization process used in step 2)</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> make_model_from_data(path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <div class="callout-warning callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -717,9 +507,12 @@ Warning
 </div>
 </div>
 <p>Directly manipulating model files and handling deserialization can be tricky - especially if you were not the one who serialized the model. As a companion to <code>log_model</code>, <code>use_model</code> automatically deserializes and reconstructs your model for use.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> wandb.beta.workflows <span class="im">import</span> use_model</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> use_model(<span class="st">"[[entity/]project/]collectionName"</span>).model_obj()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> wandb.beta.workflows <span class="im">import</span> use_model</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> use_model(<span class="st">"[[entity/]project/]collectionName"</span>).model_obj()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="evaluate-model-performance" class="level2">
 <h2 class="anchored" data-anchor-id="evaluate-model-performance">5. Evaluate Model Performance</h2>
@@ -728,33 +521,40 @@ Warning
 <li>(Optional) Declare a data dependency to your evaluation data</li>
 <li><strong>Log</strong> metrics, media, tables, and anything else useful for evaluation</li>
 </ol>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ... continuation from 4</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># (Optional) Declare an upstream evaluation dataset dependency</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> wandb.use_artifact(<span class="st">"mnist-evaluation:latest"</span>)</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate your model in whatever way makes sense for your</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>loss, accuracy, predictions <span class="op">=</span> evaluate_model(model, dataset)</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Log out metrics, images, tables, or any data useful for evaluation.</span></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>wandb.log({<span class="st">"loss"</span>: loss, <span class="st">"accuracy"</span>: accuracy, <span class="st">"predictions"</span>: predictions})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ... continuation from 4</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># (Optional) Declare an upstream evaluation dataset dependency</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> wandb.use_artifact(<span class="st">"mnist-evaluation:latest"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate your model in whatever way makes sense for your</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>loss, accuracy, predictions <span class="op">=</span> evaluate_model(model, dataset)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Log out metrics, images, tables, or any data useful for evaluation.</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>wandb.log({<span class="st">"loss"</span>: loss, <span class="st">"accuracy"</span>: accuracy, <span class="st">"predictions"</span>: predictions})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If you are executing similar code, as demonstrated in the notebook, you should see a workspace similar to the image below - here we even show model predictions against the test data!</p>
 <p><img src="https://1039519455-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Lqya5RvLedGEWPhtkjU-1972196547%2Fuploads%2FJd1Ztg57guvPGFD06mbM%2FScreen%20Shot%202022-05-12%20at%2011.45.09%20AM.png?alt=media&amp;token=d10a7066-7d77-4863-aea0-634485f40cef" class="img-fluid"></p>
 </section>
 <section id="promote-a-version-to-production" class="level2">
 <h2 class="anchored" data-anchor-id="promote-a-version-to-production">6. Promote a Version to Production</h2>
 <p>Next, you will likely want to denote which version in the Registered Model is intended to be used for Production. Here, we use the concept of aliases. Each Registered Model can have any aliases which make sense for your use case - however we often see <code>production</code> as the most common alias. Each alias can only be assigned to a single Version at a time.</p>
-<p>via UI Interface</p>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">via UI Interface</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">via API</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
 <p><img src="https://1039519455-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Lqya5RvLedGEWPhtkjU-1972196547%2Fuploads%2F6g0FZl6bbOt9cYRKAMRX%2FScreen%20Shot%202022-06-06%20at%207.50.27%20AM.png?alt=media&amp;token=e73a4446-e6a6-460e-8e04-99e1f3c5906e" class="img-fluid"></p>
-<p>via API</p>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
 <p>Follow steps in <a href="https://docs.wandb.ai/guides/models/walkthrough#3.-linking-model-versions-to-the-portfolio">Part 3. Link Model Versions to the Collection</a> and add the aliases you want to the <code>aliases</code> parameter.</p>
 <p>The image below shows the new <code>production</code> alias added to v1 of the Registered Model!</p>
 <p><img src="https://1039519455-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Lqya5RvLedGEWPhtkjU-1972196547%2Fuploads%2FCYJr0uUQV71NOvvtvvpJ%2FScreen%20Shot%202022-05-12%20at%2011.46.43%20AM.png?alt=media&amp;token=23767732-6788-4373-b0c6-0d7db2519f82" class="img-fluid"></p>
+</div>
+</div>
+</div>
 </section>
 <section id="consume-the-production-model" class="level2">
 <h2 class="anchored" data-anchor-id="consume-the-production-model">7. Consume the Production Model</h2>
 <p>Finally, you will likely want to use your production Model for inference. To do so, simply follow the steps outlined in <a href="https://docs.wandb.ai/guides/models/walkthrough#4.-evaluate-model-performance">Part 4. Using a Model Version</a>, with the <code>production</code> alias. For example:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>wandb.use_artifact(<span class="st">"[[entity/]project/]registeredModelName:production"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>wandb.use_artifact(<span class="st">"[[entity/]project/]registeredModelName:production"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can reference a Version within the Registered Model using different alias strategies:</p>
 <ul>
 <li><code>latest</code> - which will fetch the most recently linked Version</li>
@@ -766,15 +566,8 @@ Warning
 <h2 class="anchored" data-anchor-id="build-a-reporting-dashboard">8. Build a Reporting Dashboard</h2>
 <p>Using Weave Panels, you can display any of the Model Registry/Artifact views inside of Reports! See a <a href="https://wandb.ai/timssweeney/model_management_docs_official_v0/reports/MNIST-Grayscale-28x28-Model-Dashboard--VmlldzoyMDI0Mzc1">demo here</a>. Below is a full-page screenshot of an example Model Dashboard.</p>
 <p><img src="https://1039519455-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Lqya5RvLedGEWPhtkjU-1972196547%2Fuploads%2FagKefedLijcKacK3wUEb%2FScreenshot%202022-06-21%20at%2010-42-44%20Weights%20%26%20Biases.png?alt=media&amp;token=a72df30a-46a2-4ea9-8acd-ab7914a17002" class="img-fluid"></p>
-<hr>
-<section id="foo" class="level4">
-<h4 class="anchored" data-anchor-id="foo">foo</h4>
-<blockquote class="blockquote">
-<pre><code> foo ()</code></pre>
-</blockquote>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -847,8 +640,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href');
+      let href = ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
@@ -876,6 +668,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./init.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Launch Experiments with wandb.init</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
