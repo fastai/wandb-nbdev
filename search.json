@@ -1,26 +1,5 @@
 [
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "Getting Started",
-    "section": "",
-    "text": "Getting started with experiment tracking? Try the ​Quickstart​ ->"
-  },
-  {
-    "objectID": "intro.html#guides",
-    "href": "intro.html#guides",
-    "title": "Getting Started",
-    "section": "Guides",
-    "text": "Guides\n\nExperiment Tracking​: Visualize experiments in real time\nHyperparameter Tuning​: Optimize models quickly\nCollaborative Reports​: Describe and share findings\nData + Model Versioning​: Version datasets and models ​5. Data Visualization: Visualize predictions across model versions\nIntegrations: PyTorch, Keras, Hugging Face, and more\nPrivate-Hosting​: Private cloud and local hosting of the W&B app"
-  },
-  {
-    "objectID": "intro.html#reference",
-    "href": "intro.html#reference",
-    "title": "Getting Started",
-    "section": "Reference",
-    "text": "Reference\n\nPython Library\nCommand Line Interface\nApp UI ​​"
-  },
-  {
     "objectID": "walkthrough.html",
     "href": "walkthrough.html",
     "title": "Model Management Walkthrough",
@@ -124,5 +103,26 @@
     "title": "Launch Experiments with wandb.init",
     "section": "Is it possible to save metrics offline and sync them to W&B later?",
     "text": "Is it possible to save metrics offline and sync them to W&B later?\nBy default, wandb.init starts a process that syncs metrics in real time to our cloud hosted app. If your machine is offline, you don’t have internet access, or you just want to hold off on the upload, here’s how to run wandb in offline mode and sync later. You’ll need to set two environment variables.\n\nWANDB_API_KEY=$KEY, where $KEY is the API Key from your settings page\nWANDB_MODE=\"offline\"\n\nAnd here’s a sample of what this would look like in your script:\n\n\n\nimport wandb\nimport os\nos.environ[\"WANDB_MODE\"] = \"offline\"\nconfig = {\n  \"dataset\": \"CIFAR10\",\n  \"machine\": \"offline cluster\",\n  \"model\": \"CNN\",\n  \"learning_rate\": 0.01,\n  \"batch_size\": 128,\n}\nwandb.init(project=\"offline-demo\")\nfor i in range(100):\n  wandb.log({\"accuracy\": i})\n\n\n\n\nHere’s a sample terminal output:\n\npython offline.py\n\nwandb: Tracking run with wandb version 0.13.1\nwandb: W&B syncing is set to `offline` in this directory.  \nwandb: Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.\nwandb: Waiting for W&B process to finish... (success).\nwandb:                                                                                \nwandb: \nwandb: Run history:\nwandb: accuracy ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███\nwandb: \nwandb: Run summary:\nwandb: accuracy 99\nwandb: \nwandb: You can sync this run to the cloud by running:\nwandb: wandb sync /Users/hamel/wandb-nbdev/docs/wandb/offline-run-20220819_111619-1kj5i84c\nwandb: Find logs at: ./wandb/offline-run-20220819_111619-1kj5i84c/logs\n\n\nAnd once you’re ready, just run a sync command to send that folder to the cloud with the following command:\nwandb sync wandb/dryrun-folder-name\n\n!wandb sync wandb/latest-run\n\nFind logs at: /Users/hamel/wandb-nbdev/docs/wandb/debug-cli.hamel.log\nSyncing: https://wandb.ai/github-wandb/offline-demo/runs/1kj5i84c ... done."
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Getting Started",
+    "section": "",
+    "text": "Getting started with experiment tracking? Try the ​Quickstart​ ->"
+  },
+  {
+    "objectID": "intro.html#guides",
+    "href": "intro.html#guides",
+    "title": "Getting Started",
+    "section": "Guides",
+    "text": "Guides\n\nExperiment Tracking​: Visualize experiments in real time\nHyperparameter Tuning​: Optimize models quickly\nCollaborative Reports​: Describe and share findings\nData + Model Versioning​: Version datasets and models ​5. Data Visualization: Visualize predictions across model versions\nIntegrations: PyTorch, Keras, Hugging Face, and more\nPrivate-Hosting​: Private cloud and local hosting of the W&B app"
+  },
+  {
+    "objectID": "intro.html#reference",
+    "href": "intro.html#reference",
+    "title": "Getting Started",
+    "section": "Reference",
+    "text": "Reference\n\nPython Library\nCommand Line Interface\nApp UI ​​"
   }
 ]
