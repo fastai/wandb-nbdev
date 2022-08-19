@@ -1,1 +1,1 @@
-Sitemap: https://fastai.github.io/wandb-nbdev/sitemap.xml
+Sitemap: https://github.com/fastai/wandb-nbdev/sitemap.xml
