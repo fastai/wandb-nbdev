@@ -3,6 +3,9 @@ on:
   push:
     branches: [ "main", "master" ]
   workflow_dispatch:
+env:
+  WANDB_API_KEY: ${{ secrets.WANDB_API_KEY }}
+  
 jobs:
   deploy:
     runs-on: ubuntu-latest

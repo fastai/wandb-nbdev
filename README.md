@@ -1,4 +1,6 @@
-## How To Use
+# wandb docs
+
+Preview the site [here](https://fastai.github.io/wandb-nbdev/)
 
 ### Preview The Docs
 
