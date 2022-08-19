@@ -16,20 +16,19 @@ format:
 
 website:
   title: "Weights & Biases"
-  site-url: "https://wandb.github.io/wandb-nbdev"
-  description: "Weights & Biases documentation using nbdev"
+  site-url: "https://fastai.github.io/wandb-nbdev"
+  description: "Demo of Weights & Biases documentation using nbdev"
   twitter-card: true
   open-graph: true
-  reader-mode: true
+  page-navigation: true
   repo-branch: master
-  repo-url: "https://github.com/wandb/wandb-nbdev"
-  repo-actions: [issue]
+  repo-url: "https://github.com/fastai/wandb-nbdev"
   navbar:
     background: primary
     search: true
     right:
       - icon: github
-        href: "https://github.com/wandb/wandb-nbdev"
+        href: "https://github.com/fastai/wandb-nbdev"
   sidebar:
     style: "floating"
 

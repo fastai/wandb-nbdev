@@ -1,4 +1,5 @@
-_docs/
+_docs
+wandb
 
 *.bak
 .gitattributes
@@ -148,3 +149,5 @@ checklink/cookies.txt
 
 # Quarto
 .quarto
+
+/.quarto/

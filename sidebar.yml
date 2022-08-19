@@ -1,7 +1,0 @@
-website:
-  sidebar:
-    contents:
-      - section: Guides
-        contents:
-          - index.ipynb
-          - 00_model_management_walkthrough.ipynb

@@ -1,0 +1,9 @@
+website:
+  sidebar:
+    style: docked
+    contents:
+      - section: Guides
+        contents:
+          - intro.md
+          - init.ipynb
+          - model_mgmt.ipynb
