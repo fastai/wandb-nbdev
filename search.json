@@ -11,7 +11,7 @@
     "href": "intro.html#guides",
     "title": "Getting Started",
     "section": "Guides",
-    "text": "Guides\n\nExperiment Tracking​: Visualize experiments in real time\nHyperparameter Tuning​: Optimize models quickly\nCollaborative Reports​: Describe and share findings\nData + Model Versioning​: Version datasets and models ​5. Data Visualization: Visualize predictions across model versions\nIntegrations: PyTorch, Keras, Hugging Face, and more\nPrivate-Hosting​: Private cloud and local hosting of the W&B app"
+    "text": "Guides\n\nExperiment Tracking​: Visualize experiments in real time\nHyperparameter Tuning​: Optimize models quickly\nCollaborative Reports​: Describe and share findings\nData + Model Versioning​: Version datasets and models\nData Visualization​: Visualize predictions across model versions\nIntegrations: PyTorch, Keras, Hugging Face, and more\nPrivate-Hosting​: Private cloud and local hosting of the W&B app"
   },
   {
     "objectID": "intro.html#reference",
